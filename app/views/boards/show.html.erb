@@ -7,14 +7,22 @@
   <div class="col s3">
 
     <% @tickets.each do |ticket| %>
-      <% if ticket.backlog? %>
-        <p> <%= ticket.title %></p>
-        <p> <%= ticket.status %></p>
-      <% end %>
+      <%# <% if ticket.backlog? %1> %>
+          <p> <%= ticket.title %></p>
+          <p> <%= ticket.status %></p>
+        <%# <% end %1> %>
     <% end %>
 
   </div>
 </div>
+
+<div class="row">
+  <%= form_for @ticket do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
 
 <%= link_to "Home", root_path %>
 
