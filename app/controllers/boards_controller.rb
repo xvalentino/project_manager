@@ -11,7 +11,7 @@ class BoardsController < ApplicationController
 
   def show
     @board = Board.includes(:tickets).find_by(id: params['id'])
-    @tickets = @board.tickets
+    @tickets = Ticket.new
     @ticket = Ticket.new
   end
 end
