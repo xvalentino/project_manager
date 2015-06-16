@@ -5,7 +5,7 @@ class Ticket < ActiveRecord::Base
   before_create :set_status_to_zero
 
   def set_status_to_zero
-    self.status = 0
+    self.status ||= 0
   end
 
   def backlogs
@@ -26,5 +26,9 @@ class Ticket < ActiveRecord::Base
 
   def up
     self.update(status: status+1)
+  end
+
+  def down
+    self.update(status: status-1)
   end
 end

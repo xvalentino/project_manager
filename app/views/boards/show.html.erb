@@ -13,9 +13,7 @@
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <%= ticket.title %>
-          <div class="card-action">
-            <%= button_to "Current Sprint", "/tickets/#{ticket.id}/up" %>
-          </div>
+          <%= button_to "Current Sprint", "/tickets/#{ticket.id}/up", class: "waves-effect waves-light btn" %>
         </div>
       </div>
     <% end %>
@@ -30,6 +28,10 @@
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <p> <%= ticket.title %></p>
+          <div class="row">
+            <%= button_to "In Progress", "/tickets/#{ticket.id}/up", class: "waves-effect waves-light btn"  %>
+            <%= button_to "Backlog", "/tickets/#{ticket.id}/down", class: "waves-effect waves-light btn"  %>
+          </div>
         </div>
       </div>
     <% end %>
@@ -44,6 +46,8 @@
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <p> <%= ticket.title %></p>
+          <%= button_to "Done", "/tickets/#{ticket.id}/up", class: "waves-effect waves-light btn"  %>
+          <%= button_to "Current Sprint", "/tickets/#{ticket.id}/down", class: "waves-effect waves-light btn"  %>
         </div>
       </div>
     <% end %>
@@ -56,6 +60,7 @@
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <p> <%= ticket.title %></p>
+          <%= button_to "In Progress", "/tickets/#{ticket.id}/down", class: "waves-effect waves-light btn"  %>
         </div>
       </div>
     <% end %>

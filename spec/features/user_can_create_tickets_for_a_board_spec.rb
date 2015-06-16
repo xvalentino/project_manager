@@ -30,4 +30,12 @@ RSpec.feature "User can", :type => :feature do
     click_link_or_button "Current Sprint"
     # expect(ticket.status).to eq(1)
   end
+
+  scenario "demote a ticket" do
+    board = Board.create(title: "first project")
+    ticket = board.tickets.create(title: "hi", status: 1)
+    visit board_path(board)
+    click_link_or_button "Backlog"
+    expect(ticket.status).to eq(0)
+  end
 end

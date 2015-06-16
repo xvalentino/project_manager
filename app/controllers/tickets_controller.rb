@@ -10,4 +10,11 @@ class TicketsController < ApplicationController
     ticket.up
     redirect_to board_path(ticket.board)
   end
+
+  def down
+    ticket = Ticket.find_by(id: params['id'])
+    ticket.down
+    redirect_to board_path(ticket.board)
+  end
+
 end
