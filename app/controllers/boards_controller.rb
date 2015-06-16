@@ -5,6 +5,11 @@ class BoardsController < ApplicationController
   end
 
   def create
-    require 'pry'; binding.pry
+    board = Board.create(title: params['board']['title'])
+    redirect_to board_path(board)
+  end
+
+  def show
+    @board = Board.find_by(id: params['id'])
   end
 end
