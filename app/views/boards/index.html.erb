@@ -1,6 +1,8 @@
-<% @boards.each do |board| %>
-  <%= link_to board.title, board_path(board) %>
-<% end %>
+<div class="collection">
+  <% @boards.each do |board| %>
+    <%= link_to board.title, board_path(board), class: "collection-item" %>
+  <% end %>
+</div>
 
 <%= form_for @board do |f| %>
   <%= f.label :title %>:
