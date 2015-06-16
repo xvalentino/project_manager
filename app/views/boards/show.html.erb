@@ -20,6 +20,7 @@
   <%= form_for @ticket do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
+    <%= f.hidden_field :board_id, :value => @board.id %>
     <%= f.submit %>
   <% end %>
 </div>
