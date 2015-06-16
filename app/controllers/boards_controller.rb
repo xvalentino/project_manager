@@ -3,4 +3,8 @@ class BoardsController < ApplicationController
     @boards = Board.all
     @board = Board.new
   end
+
+  def create
+    require 'pry'; binding.pry
+  end
 end
