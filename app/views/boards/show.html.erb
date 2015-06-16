@@ -2,9 +2,19 @@
   <%= @board.title %>
 </h1>
 <br>
-<% @tickets.each do |ticket| %>
-  <p> <%= ticket.title %></p>
-  <p> <%= ticket.status %></p>
-<% end %>
-<br>
+
+<div class="row">
+  <div class="col s3">
+
+    <% @tickets.each do |ticket| %>
+      <% if ticket.backlog? %>
+        <p> <%= ticket.title %></p>
+        <p> <%= ticket.status %></p>
+      <% end %>
+    <% end %>
+
+  </div>
+</div>
+
 <%= link_to "Home", root_path %>
+
