@@ -1,2 +1,9 @@
+<h1>title</h1>
 <%= @board.title %>
+<br>
+<% @tickets.each do |ticket| %>
+  <p> <%= ticket.title %></p>
+  <p> <%= ticket.status %></p>
+<% end %>
+<br>
 <%= link_to "Home", root_path %>

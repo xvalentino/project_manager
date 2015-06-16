@@ -10,6 +10,7 @@ class BoardsController < ApplicationController
   end
 
   def show
-    @board = Board.find_by(id: params['id'])
+    @board = Board.includes(:tickets).find_by(id: params['id'])
+    @tickets = @board.tickets
   end
 end
