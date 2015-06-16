@@ -22,4 +22,12 @@ RSpec.feature "User can", :type => :feature do
     expect(board.tickets.count).to eq(1)
   end
 
+  scenario "advance a ticket" do
+    board = Board.create(title: "first project")
+    ticket = board.tickets.create(title: "hi")
+    visit board_path(board)
+    expect(ticket.status).to eq(0)
+    click_link_or_button "Current Sprint"
+    # expect(ticket.status).to eq(1)
+  end
 end
