@@ -6,4 +6,8 @@ RSpec.describe Ticket, type: :model do
     expect(Ticket.new(title: "good")).to be_valid
   end
 
+  it "has enum status that defaults to 0" do
+    ticket = Ticket.create(title: "good")
+    expect(ticket.status).to eq(0)
+  end
 end
